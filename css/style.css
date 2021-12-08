@@ -12,11 +12,26 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-h1 {
-  color: white;
+div.leftWrapper {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 255px;
 }
 
-p {
+h1 {
+  font-size: 55px;
+  width: 500px;
+  height: 150px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+p.paragraph {
+  width: 500px;
+  height: 75px;
   color: white;
 }
 
@@ -31,9 +46,10 @@ p.heading {
   text-align: center;
   -webkit-box-shadow: 0 7px 0 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 7px 0 0 rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
-div.wrapper {
+div.rightWrapper {
   position: absolute;
   left: 60%;
   top: 25%;
@@ -46,8 +62,7 @@ div.wrapper {
           box-shadow: 0 7px 0 0 rgba(0, 0, 0, 0.2);
 }
 
-div.wrapper form {
-  position: relative;
+div.rightWrapper form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,7 +77,7 @@ div.wrapper form {
   height: 400px;
 }
 
-div.wrapper form button {
+div.rightWrapper form button {
   display: block;
   width: 100%;
   color: white;
@@ -77,7 +92,7 @@ div.wrapper form button {
           box-shadow: 0 2px 0 0 #36b57e;
 }
 
-div.wrapper form p {
+div.rightWrapper form p {
   display: inline-block;
   width: 100%;
   color: #b9b6d3;
@@ -85,7 +100,7 @@ div.wrapper form p {
   text-align: center;
 }
 
-div.wrapper form p strong {
+div.rightWrapper form p strong {
   color: #ff7a7a;
 }
 
@@ -101,5 +116,11 @@ input {
 
 input:focus {
   border: 1px solid black;
+}
+
+@media (max-width: 640px) {
+  body {
+    background-image: url(../images/bg-intro-mobile.png);
+  }
 }
 /*# sourceMappingURL=style.css.map */
