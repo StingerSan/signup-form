@@ -24,10 +24,22 @@
     <p class="heading"><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
     <div class="rightWrapper">
         <form>
-            <input id="FirstName" type="text" placeholder="First Name" name="name" required="required">
-            <input id="LastName" type="text" placeholder="Last Name" name="name" required="required">
-            <input id="EmailAddress" type="email" placeholder="Email Address" required="required">
-            <input type="password" placeholder="Password" required="required">
+            <div>
+                <input id="FirstName" type="text" placeholder="First Name" name="name" required="required">
+                <label for="FirstName">First Name cannot be empty</label>
+            </div>
+            <div>
+                <input id="LastName" type="text" placeholder="Last Name" name="name" required="required">
+                <label for="LastName">Last Name cannot be empty</label>
+            </div>    
+            <div>
+                <input id="EmailAddress" type="email" placeholder="Email Address" required="required">
+                <label for="EmailAddress">Lokks like this is not an email</label>
+            </div>
+            <div>
+                <input id="Password" type="password" placeholder="Password" required="required">
+                <label for="Password">Password cannot be empty</label>
+            </div>    
             <button type="submit">Claim your free trial</button>
             <p>by clicking the button, you agreeing to our <strong>Terms and Services</strong></p>
         </form>
