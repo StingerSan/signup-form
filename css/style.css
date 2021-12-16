@@ -109,11 +109,7 @@ div.rightWrapper form p strong {
 }
 
 label {
-  display: block;
-  width: 100%;
-  text-align: right;
-  color: #ff7a7a;
-  font-size: 10px;
+  display: none;
 }
 
 input {
