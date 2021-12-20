@@ -124,6 +124,13 @@ input {
   outline: none;
 }
 
+input.activeInput {
+  background-image: url(../images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: right 7% top 50%;
+  border: 2px solid #ff7a7a;
+}
+
 input:focus {
   border: 1px solid black;
 }
