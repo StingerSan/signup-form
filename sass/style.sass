@@ -74,9 +74,12 @@ div.rightWrapper form p
 div.rightWrapper form p strong
     color: hsl(0, 100%, 74%)
 label
-    display: none
-// label.active
     display: block
+    opacity: 0
+    font-size: 10px
+label.active
+    display: block
+    opacity: 1
     width: 100%
     text-align: right
     color: hsl(0, 100%, 74%)
@@ -89,7 +92,7 @@ input
     margin-bottom: 5px
     padding: 15px 20px 15px 20px
     border-radius: 6px
-    border: 1px solid #aaa9a9
+    border: 2px solid #aaa9a9
     outline: none
 input.activeInput
     background-image: url(../images/icon-error.svg)
@@ -97,7 +100,7 @@ input.activeInput
     background-position: right 7% top 50%
     border: 2px solid hsl(0, 100%, 74%)
 input:focus
-    border: 1px solid black
+    border: 2px solid black
 
 // ////////////////////////// MOBILE //////////////////////////////
 
