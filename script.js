@@ -7,7 +7,7 @@ const labelErrorFirstName = document.getElementById("ErrorFirstName")
 const labelErrorLastName = document.getElementById("ErrorLastName")
 const labelErrorEmailAddress = document.getElementById("ErrorEmailAddress")
 const labelErrorPasswoed = document.getElementById("ErrorPassword")
-const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const submit = () => {
     if (inputFirstName.value === "") {
@@ -24,12 +24,11 @@ const submit = () => {
     } else
         inputLastName.classList.remove("activeInput"), labelErrorLastName.classList.remove("active");
 
-    if (inputEmailAddress.value === "" || inputEmailAddress.value.match(emailRegex)) {
+    if (inputEmailAddress.value === "", !inputEmailAddress.value.match(emailRegex)) {
         inputEmailAddress.classList.add("activeInput");
         inputEmailAddress.removeAttribute("placeholder");
         labelErrorEmailAddress.classList.add("active");
-        inputEmailAddress.textContent = "email@example/com"; 
-    }else
+    } else
         inputEmailAddress.classList.remove("activeInput"), labelErrorEmailAddress.classList.remove("active");
 
     if (inputPassword.value === "") {
