@@ -1,41 +1,43 @@
 const button = document.querySelector("button")
-const inputItem1 = document.getElementById("FirstName")
-const inputItem2 = document.getElementById("LastName")
-const inputItem3 = document.getElementById("EmailAddress")
-const inputItem4 = document.getElementById("Password")
-const labelItem1 = document.getElementById("ErrorFirstName")
-const labelItem2 = document.getElementById("ErrorLastName")
-const labelItem3 = document.getElementById("ErrorEmailAddress")
-const labelItem4 = document.getElementById("ErrorPassword")
+const inputFirstName = document.getElementById("FirstName")
+const inputLastName = document.getElementById("LastName")
+const inputEmailAddress = document.getElementById("EmailAddress")
+const inputPassword = document.getElementById("Password")
+const labelErrorFirstName = document.getElementById("ErrorFirstName")
+const labelErrorLastName = document.getElementById("ErrorLastName")
+const labelErrorEmailAddress = document.getElementById("ErrorEmailAddress")
+const labelErrorPasswoed = document.getElementById("ErrorPassword")
+const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
 const submit = () => {
-    if (inputItem1.value === "") {
-        inputItem1.classList.add("activeInput");
-        inputItem1.removeAttribute("placeholder");
-        labelItem1.classList.add("active")
+    if (inputFirstName.value === "") {
+        inputFirstName.classList.add("activeInput");
+        inputFirstName.removeAttribute("placeholder");
+        labelErrorFirstName.classList.add("active");
     } else
-        inputItem1.classList.remove("activeInput"), labelItem1.classList.remove("active");
+        inputFirstName.classList.remove("activeInput"), labelErrorFirstName.classList.remove("active");
 
-    if (inputItem2.value === "") {
-        inputItem2.classList.add("activeInput");
-        inputItem2.removeAttribute("placeholder");
-        labelItem2.classList.add("active")
+    if (inputLastName.value === "") {
+        inputLastName.classList.add("activeInput");
+        inputLastName.removeAttribute("placeholder");
+        labelErrorLastName.classList.add("active");
     } else
-        inputItem2.classList.remove("activeInput"), labelItem2.classList.remove("active");
+        inputLastName.classList.remove("activeInput"), labelErrorLastName.classList.remove("active");
 
-    if (inputItem3.value === "") {
-        inputItem3.classList.add("activeInput");
-        inputItem3.removeAttribute("placeholder");
-        labelItem3.classList.add("active")
-    } else
-        inputItem3.classList.remove("activeInput"), labelItem3.classList.remove("active");
+    if (inputEmailAddress.value === "" || inputEmailAddress.value.match(emailRegex)) {
+        inputEmailAddress.classList.add("activeInput");
+        inputEmailAddress.removeAttribute("placeholder");
+        labelErrorEmailAddress.classList.add("active");
+        inputEmailAddress.textContent = "email@example/com"; 
+    }else
+        inputEmailAddress.classList.remove("activeInput"), labelErrorEmailAddress.classList.remove("active");
 
-    if (inputItem4.value === "") {
-        inputItem4.classList.add("activeInput");
-        inputItem4.removeAttribute("placeholder");
-        labelItem4.classList.add("active")
+    if (inputPassword.value === "") {
+        inputPassword.classList.add("activeInput");
+        inputPassword.removeAttribute("placeholder");
+        labelErrorPasswoed.classList.add("active");
     } else
-        inputItem4.classList.remove("activeInput"), labelItem4.classList.remove("active");
+        inputPassword.classList.remove("activeInput"), labelErrorPasswoed.classList.remove("active");
 
 }
 button.addEventListener("click", submit)
